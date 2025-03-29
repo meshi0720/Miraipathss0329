@@ -1,0 +1,295 @@
+/* ============================= */
+/* CSSリセット */
+/* ============================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================= */
+/* 基本スタイル */
+/* ============================= */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    background-color: #f4f4f4;
+}
+
+/* ヘッダー全体のスタイル */
+.header {
+    display: flex;
+    /* ロゴとメニューを横並びにする */
+    justify-content: space-between;
+    /* ロゴを左、メニューを右に */
+    align-items: center;
+    /* 縦方向の中央揃え */
+    padding: 10px 20px;
+    background-color: rgb(109, 229, 234);
+    /* 背景色（適宜変更） */
+    width: 100%;  /* ← 追加 */
+    max-width: 1200px; /* 必要なら最大幅を設定 */
+    margin: 0 auto;  /* 中央配置 */
+
+}
+
+/* ロゴのスタイル */
+.logo {
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0;/* ← 追加: ロゴの縮小を防ぐ */
+}
+
+.logo img {
+    height: 100px;/* ここでロゴを小さく */
+    width: auto;
+    display: block;
+}
+
+/* メニューリストのスタイル */
+.header-list {
+    flex-grow: 1;
+    /* メニュー部分が適切に広がる */
+    text-align: right;
+}
+
+.header-list ul {
+    list-style: none;
+    display: flex;
+    /* 横並びにする */
+    gap: 20px;
+    /* メニュー間の余白 */
+    margin: 0;
+    padding: 0;
+}
+
+/* メニューテキストのスタイル */
+.header-list a {
+    text-decoration: none;
+    color: #333;
+    /* 文字色 */
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.header-list a:hover {
+    color: #007bff;
+    /* ホバー時の色変更 */
+}
+
+/* メインコンテンツ */
+.container {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.container img {
+    width: 100%;
+    height: auto;
+}
+
+.container b {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    color: rgb(70, 236, 37);
+    font-weight: bold;
+}
+
+.container p {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 70px;
+    color: white;
+}
+
+.uname {
+    position: center;
+}
+
+h1 {
+    font-style: italic;
+    font-size: 50px;
+    color: blue;
+}
+
+.partner img {
+    width: 50%;
+    height: auto;
+}
+
+/* ボタンスタイル */
+button {
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+/* テキストエリア */
+textarea {
+    width: 80%;
+    max-width: 500px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* output全体のスタイル */
+#output {
+    overflow-y: auto;
+    height: 300px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* メッセージのスタイル */
+.message {
+    max-width: 70%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    position: relative;
+    word-wrap: break-word;
+    margin-bottom: 10px;
+}
+
+.message.sent {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+    border-top-right-radius: 0;
+    text-align: left;
+}
+
+.message.sent::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: -10px;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-left-color: #dcf8c6;
+    border-right: 0;
+    margin-top: 5px;
+}
+
+.message.received {
+    background-color: #ffffff;
+    align-self: flex-start;
+    border-top-left-radius: 0;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.message.received::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: -10px;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-right-color: #ffffff;
+    border-left: 0;
+    margin-top: 5px;
+}
+
+/* 学校一覧の表スタイル */
+#schoolTable {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin-top: 20px !important;
+}
+
+#schoolTable thead {
+    background-color: #0073e6;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+#schoolTable th,
+#schoolTable td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+#schoolTable tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#schoolTable tbody tr:hover {
+    background-color: #d1e7fd;
+}
+
+/* ============================= */
+/* レスポンシブデザイン */
+/* ============================= */
+@media (max-width: 768px) {
+    .header-list ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-list ul li {
+        margin: 10px 0;
+    }
+
+    textarea {
+        width: 90%;
+    }
+
+    .container b,
+    .container p {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-list ul li a {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    textarea {
+        font-size: 14px;
+    }
+
+    .container b,
+    .container p {
+        font-size: 30px;
+    }
+}
