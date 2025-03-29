@@ -1,0 +1,5 @@
+# 機密情報
+config.php
+funcs.php
+hash.php
+.env
